@@ -13,6 +13,14 @@ projects = [
     }
 ]
 
+skills = [
+    "Python",
+    "Flask",
+    "HTML",
+    "CSS",
+    "JavaScript"
+]
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -29,6 +37,15 @@ def contact():
         return f"Thank you {name}, your message has been received!"
 
     return render_template("contact.html")
+
+@app.route("/skills")
+def skills_page():
+    return render_template("skills.html", skills=skills)
+
+@app.route("/about")
+def about_page():
+    return render_template("about.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
