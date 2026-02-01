@@ -55,24 +55,23 @@ The web application functions as a **personal portfolio website** that showcases
 
 ## Project Structure
 
-flask_portfolio/
+## Project Structure
+
+flask_web_app/
 │
 ├── app.py
-├── requirements.txt
+├── README.md
 │
 ├── templates/
-│   ├── home.html
-│   ├── projects.html
-│   ├── skills.html
-│   ├── about.html
-│   └── contact.html
+│ └── home.html
 │
 ├── static/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── script.js
-
+│ ├── css/
+│ │ └── style.css
+│ └── js/
+│ └── script.js
+│
+├── venv/
 
 ## Flask Routes Plan
 
