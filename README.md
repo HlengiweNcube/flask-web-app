@@ -75,8 +75,7 @@ flask_web_app/
 ## How to Run the Project Locally
 
 1. Clone the repository:
-   ```bash
-   git clone <repository-url>
+    git clone <repository-url>
  
 2. Navigate into the project folder:
    cd flask_web_app
