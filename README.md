@@ -55,8 +55,6 @@ The web application functions as a **personal portfolio website** that showcases
 
 ## Project Structure
 
-## Project Structure
-
 flask_web_app/
 │
 ├── app.py
@@ -73,13 +71,37 @@ flask_web_app/
 │
 ├── venv/
 
-## Flask Routes Plan
 
-| Route       | HTTP Method | Purpose                        |
-| ----------- | ----------- | ------------------------------ |
-| `/`         | GET         | Load home page                 |
-| `/projects` | GET         | Display project list           |
-| `/skills`   | GET         | Display skills                 |
-| `/about`    | GET         | Show about page                |
-| `/contact`  | GET, POST   | Handle contact form submission |
+## How to Run the Project Locally
 
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+ 
+2. Navigate into the project folder:
+   cd flask_web_app
+
+3. Create and activate a virtual environment:
+   python -m venv venv
+   source venv/Scripts/activate
+
+4. Install the required dependencies:
+   pip install flask
+
+5. Run the Flask application:
+  python app.py
+
+6. Open a web browser and go to:
+ http://127.0.0.1:5000/
+
+## Application Features
+
+### Core Pages
+
+| Page     | Description |
+|----------|-------------|
+| Home     | Introduction and navigation hub |
+| Projects | Displays a list of projects using Flask data structures |
+| Skills   | Shows technical skills dynamically |
+| About    | Background and personal information |
+| Contact  | Contact form using POST request |
