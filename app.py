@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, app
 
- app = Flask(__name__)
+app = Flask(__name__)
 
 @app.route("/")
 def home():
@@ -16,7 +16,7 @@ def projects():
 
 @app.route("/skills")
 def skills():
-     return "Skills Page"
+    return "Skills Page"
 
 @app.route("/contact")
 def contact():
