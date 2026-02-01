@@ -53,7 +53,7 @@ The web application functions as a **personal portfolio website** that showcases
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 flask_portfolio/
 │
