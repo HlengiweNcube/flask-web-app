@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Flask Web App</title>
+    <title>Flask Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
-    <h1>Hello, Flask!</h1>
-    <p>Your Flask app is running.</p>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-flex">
+            <h1 class="logo">FlaskApp</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/projects">Projects</a>
+                <a href="/skills">Skills</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h2>My Project Portfolio for the Full Stack Software Development Course</h2>
+            <p>
+                This website showcases the projects I have completed during this course,
+                highlighting my learning and progress across the HTML, JavaScript, and Python modules,
+                and how these technologies are combined in full stack web development.
+            </p>
+
+            <a href="/projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container grid">
+        <div class="card">
+            <h3>About</h3>
+            <p>
+                Learn more about this project, its purpose, and the technologies used.
+            </p>
+            <a href="/about">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>Skills</h3>
+            <p>
+                Python, Flask, HTML, CSS, and JavaScript used to build this application.
+            </p>
+            <a href="/skills">View skills →</a>
+        </div>
+
+        <div class="card">
+            <h3>Projects</h3>
+            <p>
+                Dynamic content rendered using Flask data structures and templates.
+            </p>
+            <a href="/projects">See projects →</a>
+        </div>
+    </main>
+
 </body>
+
 </html>
