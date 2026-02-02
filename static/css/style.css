@@ -364,6 +364,64 @@ body {
 .about-hero {
     margin-top: 0;
 }
+/* Contact Page */
+
+.contact-hero {
+    background: linear-gradient(135deg, #009688, #4db6ac);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 6px solid #009688;
+}
+
+.contact-hero h2 {
+    margin-bottom: 10px;
+}
+
+.contact-hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 17px;
+}
+
+.contact-page {
+    padding: 60px 20px;
+    background-color: #f5f6fa;
+}
+
+.contact-card {
+    max-width: 500px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #009688;
+}
 
 
 
