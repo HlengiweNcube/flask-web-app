@@ -7,20 +7,59 @@
 </head>
 <body>
 
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/projects">Projects</a> |
-        <a href="/skills">Skills</a> |
-        <a href="/about">About</a> |
-        <a href="/contact">Contact</a>
-    </nav>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-flex">
+            <h1 class="logo">FlaskApp</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/projects">Projects</a>
+                <a href="/skills">Skills</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <h1>About Me</h1>
+    <main class="container">
 
-    <p>
-        This web application was created using Flask as part of a Python course assignment.
-        It demonstrates backend development, frontend design, and deployment preparation.
-    </p>
+    <!-- Page Header -->
+    <section class="page-header">
+        <h2>About This Portfolio</h2>
+        <p>
+            An overview of the purpose, structure, and learning outcomes of this course project.
+        </p>
+    </section>
 
+    <!-- Content Grid -->
+    <section class="about-grid">
+
+        <div class="about-card">
+            <h3>Purpose</h3>
+            <p>
+                This portfolio was created as part of the Full Stack Software Development course
+                to showcase projects completed during the course and demonstrate key skills learned.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Course Modules</h3>
+            <p>
+                The course covered three core modules: HTML for structure, JavaScript for
+                interactivity, and Python for backend logic and application development.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Learning Outcomes</h3>
+            <p>
+                Through these projects, I gained experience in building dynamic web pages,
+                handling user input, and developing backend functionality using Flask.
+            </p>
+        </div>
+
+    </section>
+
+</main>
 </body>
 </html>
