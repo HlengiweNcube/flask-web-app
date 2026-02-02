@@ -4,12 +4,24 @@ app = Flask(__name__)
 
 projects = [
     {
-        "title": "Flask Web App",
-        "description": "A simple web application built using Flask."
+        "title": "Afrovibes – Southern African Music Showcase",
+        "description": (
+            "An HTML-based website created to showcase Southern African music and culture. "
+            "The project highlights iconic artists such as Miriam Makeba, groups like Ladysmith Black Mambazo "
+            "and Asungura Boys, and traditional instruments including the mbira and African drums. "
+            "The site focuses on structure, content presentation, and cultural storytelling using HTML."
+        ),
+        "image": "ladysmith.jpg"
     },
     {
-        "title": "Portfolio Website",
-        "description": "A personal portfolio showcasing projects and skills."
+        "title": "Tour Zimbabwe – Interactive Travel Website",
+        "description": (
+            "A web project built using HTML and JavaScript to promote tourism in Zimbabwe. "
+            "The website features popular destinations such as Victoria Falls, the Zambezi Valley, "
+            "Matobo Hills, and other attractions. JavaScript was used to add interactivity and enhance "
+            "the user experience."
+        ),
+        "image": "lion.jpg"
     }
 ]
 

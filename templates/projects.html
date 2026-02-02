@@ -2,29 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Projects</title>
+    <title>Course Projects</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
     <nav>
         <a href="/">Home</a> |
-        <a href="/projects">Projects</a> |
+        <a href="/projects">Course Projects</a> |
         <a href="/skills">Skills</a> |
         <a href="/about">About</a> |
         <a href="/contact">Contact</a>
     </nav>
 
-    <h1>Projects</h1>
+    <main class="container projects-page">
 
-    <ul>
-        {% for project in projects %}
-            <li>
-                <strong>{{ project.title }}</strong><br>
-                {{ project.description }}
-            </li>
-        {% endfor %}
-    </ul>
+        <h2>Course Projects</h2>
+
+        <p>
+            The projects below were completed as part of the Full Stack Software Development course.
+            They demonstrate my learning progression from HTML, to JavaScript, and now to Flask,
+            which brings all projects together into a single portfolio.
+        </p>
+
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card">
+                <img src="{{ url_for('static', filename='images/' + project.image) }}"
+                     alt="{{ project.title }}">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </main>
 
 </body>
 </html>
