@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,flash
 
 app = Flask(__name__)
 
@@ -42,12 +42,8 @@ def projects_page():
     return render_template("projects.html", projects=projects)
 
 @app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        name = request.form.get("name")
-        message = request.form.get("message")
-        return f"Thank you {name}, your message has been received!"
-
+def contact_page():
+    
     return render_template("contact.html")
 
 @app.route("/skills")
@@ -57,6 +53,28 @@ def skills_page():
 @app.route("/about")
 def about_page():
     return render_template("about.html")
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        name = request.form.get("name", "").strip()
+        email = request.form.get("email", "").strip()
+        phone = request.form.get("phone", "").strip()
+        message = request.form.get("message", "").strip()
+
+        if not name or not email or not phone or not message:
+            flash("All fields are required.")
+            return render_template("contact.html")
+
+        if not phone.isdigit():
+            flash("Phone number must contain digits only.")
+            return render_template("contact.html")
+
+        # If everything is valid
+        flash("Thank you! Your message has been sent.")
+        return render_template("contact.html")
+
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
