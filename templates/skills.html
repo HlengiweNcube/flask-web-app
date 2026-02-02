@@ -7,21 +7,41 @@
 </head>
 <body>
 
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/projects">Projects</a> |
-        <a href="/skills">Skills</a> |
-        <a href="/about">About</a> |
-        <a href="/contact">Contact</a>
-    </nav>
+    <header class="navbar">
+        <div class="container nav-flex">
+            <h1 class="logo">FlaskApp</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/projects">Projects</a>
+                <a href="/skills">Skills</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <h1>Skills</h1>
+    <main class="container skills-page">
+        <h2>Skills Developed</h2>
 
-    <ul>
-        {% for skill in skills %}
-            <li>{{ skill }}</li>
-        {% endfor %}
-    </ul>
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Page structure, semantic elements, forms, and layout.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Basic interactivity, DOM manipulation, and client-side logic.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python &amp; Flask</h3>
+                <p>Routing, templates, data structures, and backend logic.</p>
+            </div>
+
+        </div>
+    </main>
 
 </body>
 </html>
