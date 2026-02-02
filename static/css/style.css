@@ -423,5 +423,21 @@ body {
     border-color: #009688;
 }
 
+/* Footer */
+
+.site-footer {
+    background: linear-gradient(135deg, #009688, #4db6ac);
+    color: white;
+    padding: 30px 20px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
 
 
