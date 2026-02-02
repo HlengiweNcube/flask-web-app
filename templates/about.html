@@ -10,56 +10,64 @@
     <!-- Navigation -->
     <header class="navbar">
         <div class="container nav-flex">
-            <h1 class="logo">FlaskApp</h1>
+            <h1 class="logo">My Portfolio</h1>
             <nav>
                 <a href="/">Home</a>
-                <a href="/projects">Projects</a>
-                <a href="/skills">Skills</a>
                 <a href="/about">About</a>
+                <a href="/skills">Skills</a>
+                <a href="/projects">Projects</a>
                 <a href="/contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <h2>About This Portfolio</h2>
-        <p>
-            An overview of the purpose, structure, and learning outcomes of this course project.
-        </p>
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h2>About This Portfolio</h2>
+            <p>
+                This page provides an overview of the purpose of this portfolio
+                and the learning journey behind the projects presented.
+            </p>
+        </div>
     </section>
 
-    <!-- Content Grid -->
-    <section class="about-grid">
+    <!-- About Content -->
+    <main class="container about-page">
 
-        <div class="about-card">
-            <h3>Purpose</h3>
-            <p>
-                This portfolio was created as part of the Full Stack Software Development course
-                to showcase projects completed during the course and demonstrate key skills learned.
-            </p>
+        <div class="about-grid">
+
+            <div class="about-card">
+                <img src="{{ url_for('static', filename='images/books2.jpg') }}" alt="Purpose icon">
+                <h3>Purpose</h3>
+                <p>
+                    This portfolio was created as part of the Full Stack Software Development
+                    course to showcase projects completed during the course and demonstrate
+                    key skills learned.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <img src="{{ url_for('static', filename='images/Books.jpg') }}" alt="Modules icon">
+                <h3>Course Modules</h3>
+                <p>
+                    The course covered three core modules: HTML for structure, JavaScript
+                    for interactivity, and Python for backend logic and application development.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <img src="{{ url_for('static', filename='images/books2.jpg') }}" alt="Learning icon">
+                <h3>Learning Outcomes</h3>
+                <p>
+                    Through these projects, I gained experience in building dynamic web pages,
+                    handling user input, and developing backend functionality using Flask.
+                </p>
+            </div>
+
         </div>
 
-        <div class="about-card">
-            <h3>Course Modules</h3>
-            <p>
-                The course covered three core modules: HTML for structure, JavaScript for
-                interactivity, and Python for backend logic and application development.
-            </p>
-        </div>
+    </main>
 
-        <div class="about-card">
-            <h3>Learning Outcomes</h3>
-            <p>
-                Through these projects, I gained experience in building dynamic web pages,
-                handling user input, and developing backend functionality using Flask.
-            </p>
-        </div>
-
-    </section>
-
-</main>
 </body>
 </html>
