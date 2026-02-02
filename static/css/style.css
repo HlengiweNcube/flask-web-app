@@ -51,10 +51,8 @@ body {
 
 .hero {
     background:
-        linear-gradient(
-            rgba(74, 0, 224, 0.75),
-            rgba(74, 0, 224, 0.75)
-        ),
+        linear-gradient(rgba(74, 0, 224, 0.75),
+            rgba(74, 0, 224, 0.75)),
         url("../images/education2.jpg");
     background-size: cover;
     background-position: center;
@@ -65,9 +63,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    
 }
-
 
 .hero h2 {
     font-size: 40px;
@@ -75,10 +71,17 @@ body {
     text-align: center;
 }
 
+.hero .container {
+    text-align: center;
+}
+
+
 .hero p {
     max-width: 650px;
     font-size: 18px;
     text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 /* Buttons */
@@ -101,9 +104,11 @@ body {
 /* Cards */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
     margin-top: 10px;
+    text-align: center;
 }
 
 .card {
