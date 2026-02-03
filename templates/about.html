@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>About</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-      <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <header class="navbar">
         <div class="container nav-flex">
@@ -33,10 +35,13 @@
     </section>
 
     <!-- About Content -->
-    <main class="container about-page">
+    <main id="main-content">
 
+    <!-- About Cards -->
+    <section class="container">
         <div class="about-grid">
 
+            <!-- Purpose -->
             <div class="about-card">
                 <img src="{{ url_for('static', filename='images/books2.jpg') }}" alt="Purpose icon">
                 <h3>Purpose</h3>
@@ -47,17 +52,9 @@
                 </p>
             </div>
 
+            <!-- Learning Outcomes (NOW MATCHES PURPOSE) -->
             <div class="about-card">
-                <img src="{{ url_for('static', filename='images/Books.jpg') }}" alt="Modules icon">
-                <h3>Course Modules</h3>
-                <p>
-                    The course covered three core modules: HTML for structure, JavaScript
-                    for interactivity, and Python for backend logic and application development.
-                </p>
-            </div>
-
-            <div class="about-card">
-                <img src="{{ url_for('static', filename='images/books2.jpg') }}" alt="Learning icon">
+                <img src="{{ url_for('static', filename='images/books2.jpg') }}" alt="Learning outcomes icon">
                 <h3>Learning Outcomes</h3>
                 <p>
                     Through these projects, I gained experience in building dynamic web pages,
@@ -66,16 +63,67 @@
             </div>
 
         </div>
+    </section>
 
-    </main>
-  <footer class="site-footer">
-    <div class="container footer-content">
-        <p>
-            © 2026 | Full Stack Software Development Portfolio
-            <br>
-            Built with HTML, CSS, JavaScript &amp;  Flask
-        </p>
-    </div>
-</footer>
+    <!-- Course Modules (FULL WIDTH SECTION) -->
+    <section class="course-modules">
+        <div class="container">
+            <h2>Course Modules Covered</h2>
+
+            <div class="modules-grid">
+
+                <div class="module-card">
+                    <h3>Web Design</h3>
+                    <ul>
+                        <li>Introduction to the Internet and World Wide Web</li>
+                        <li>HTML Basics</li>
+                        <li>Web Development and Design Principles</li>
+                        <li>Visual Elements and Graphics</li>
+                        <li>Website Design</li>
+                        <li>Page Layout Basics</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>JavaScript</h3>
+                    <ul>
+                        <li>Introduction to JavaScript</li>
+                        <li>JavaScript Programming</li>
+                        <li>Control Statements</li>
+                        <li>Simple Graphics</li>
+                        <li>Functions</li>
+                        <li>Writing Interactive Programs</li>
+                        <li>Strings and Arrays</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Python and Flask</h3>
+                    <ul>
+                        <li>Introduction to Python</li>
+                        <li>Elementary Programming Concepts</li>
+                        <li>Selections</li>
+                        <li>Mathematical Functions, Strings, Objects, and Lists</li>
+                        <li>Loops and Iteration</li>
+                        <li>Functions and Modules</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>
+                © 2026 | Full Stack Software Development Portfolio
+                <br>
+                Built with HTML, CSS, JavaScript &amp; Flask
+            </p>
+        </div>
+    </footer>
 </body>
+
 </html>
