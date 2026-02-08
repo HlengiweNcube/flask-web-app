@@ -18,6 +18,18 @@ The web application functions as a **personal portfolio website** that showcases
 
 ---
 
+
+## 🧭 Development Approach
+
+Rather than producing a separate planning document,  
+**design decisions and iterations were documented continuously**
+and are recorded below.
+
+This reflects a realistic development workflow where planning,
+testing, and refinement occur alongside implementation.
+
+---
+
 ## Application Features
 
 ### Core Pages
@@ -53,6 +65,46 @@ The web application functions as a **personal portfolio website** that showcases
 
 ---
 
+## 🧩 Site Structure & Navigation
+
+The website consists of the following pages:
+
+- Home
+- About
+- Skills
+- Projects
+- Contact
+
+### Navigation Design
+- **Tried:** fixed and repositioned navigation
+- **Issue:** jumpy experience when scrolling
+- **Selected:** consistent static navigation across all pages
+- **Reason:** improves usability and orientation
+
+Active navigation links are highlighted to show the current page.
+
+---
+
+## 🖼️ Layout & Visual Design
+
+### Layout Choice
+- **Tried:** Flexbox-only layouts
+- **Issue:** limited control for card-based layouts
+- **Selected:** CSS Grid for cards and sections
+- **Reason:** Grid provides better responsiveness and alignment
+
+### Page Structure
+- Hero sections used to visually indicate the start of pages
+- Cards used to group related content
+- Containers used to control content width on large screens
+
+---
+
+## 🎨 CSS Design Decisions
+
+- Reusable classes were created to reduce duplication
+- Gradients were used for hero sections and navigation for visual consistency
+- Hover and focus states were added for interactive element
 ## Project Structure
 
 flask_web_app/
@@ -104,3 +156,28 @@ flask_web_app/
 | Skills   | Shows technical skills dynamically |
 | About    | Background and personal information |
 | Contact  | Contact form using POST request |
+
+---
+
+## ♿ Accessibility Considerations
+
+Accessibility was considered throughout the development of this project:
+
+- Semantic HTML elements were used (`header`, `nav`, `main`, `section`)
+- A skip-to-content link was implemented for keyboard users
+- Visible focus styles were added for links, buttons, and form fields
+- Form inputs use appropriate input types and labels
+- Images include descriptive alt text
+
+These decisions were made to improve usability for keyboard and screen reader users.
+
+---
+
+## ✅ Validation
+
+The project was checked for standards compliance:
+
+- HTML validated using the W3C HTML Validator
+- CSS validated using the W3C CSS Validator
+
+Any warnings or errors encountered were reviewed and resolved where possible to ensure clean, standards-compliant code.
