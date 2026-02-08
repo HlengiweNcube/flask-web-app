@@ -1,5 +1,15 @@
 # Flask Portfolio Web Application
 
+# Flask Portfolio Web Application
+
+🔗 **Live Site (Render):**  
+ https://flask-web-app-rrvy.onrender.com
+
+🔗 **GitHub Repository:**  
+https://github.com/HlengiweNcube/flask-web-app
+
+
+
 ## 📌 Project Overview
 This project is a web application built using **Python and Flask** as part of a course assignment.  
 The purpose of the application is to demonstrate the use of Flask for backend development while integrating **HTML, CSS, and JavaScript** to create a modern, interactive, and visually appealing website.
@@ -208,4 +218,18 @@ Due to the static nature of these earlier projects, there is no automatic
 navigation back to the Flask application unless a manual link is added.
 This limitation is acknowledged and was intentionally accepted to avoid
 modifying completed coursework retrospectively.
+
+## Deployment Notes (Render)
+
+During deployment to Render, the initial `requirements.txt` file contained
+packages not required for production (e.g. Jupyter-related dependencies).
+
+To resolve build issues and follow best practice, the file was cleaned
+to include only production dependencies:
+
+- Flask
+- gunicorn
+
+This ensured a successful and stable deployment.
+
 
