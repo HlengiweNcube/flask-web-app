@@ -194,3 +194,18 @@ Images used in the project were sourced from free-to-use platforms:
 
 - Unsplash
 - Pexels
+
+## 🔗 External Project Links
+
+Some projects showcased in this portfolio were created earlier in the course
+using standalone HTML and JavaScript, before Flask was introduced.
+
+These projects are linked as **external live sites** and open in a new browser tab.
+This design choice ensures that users do not lose their place within the Flask
+portfolio application while viewing earlier work.
+
+Due to the static nature of these earlier projects, there is no automatic
+navigation back to the Flask application unless a manual link is added.
+This limitation is acknowledged and was intentionally accepted to avoid
+modifying completed coursework retrospectively.
+
