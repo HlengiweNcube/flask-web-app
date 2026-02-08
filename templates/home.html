@@ -14,12 +14,13 @@
         <div class="container nav-flex">
             <h1 class="logo">FlaskApp</h1>
             <nav>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/skills">Skills</a>
-                <a href="/projects">Projects</a>
-                <a href="/contact">Contact</a>
-            </nav>
+    <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+    <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About</a>
+    <a href="/skills" class="{% if request.path == '/skills' %}active{% endif %}">Skills</a>
+    <a href="/projects" class="{% if request.path == '/projects' %}active{% endif %}">Projects</a>
+    <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a>
+</nav>
+
         </div>
     </header>
 
@@ -37,42 +38,36 @@
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container grid">
+    <main id="main-content" class="container">
+
+    <div class="grid">
         <div class="card">
             <h3>About</h3>
-            <p>
-                Learn more about this project, its purpose, and the technologies used.
-            </p>
+            <p>Learn more about this project, its purpose, and the technologies used.</p>
             <a href="/about">Read more →</a>
         </div>
 
         <div class="card">
             <h3>Skills</h3>
-            <p>
-                Python, Flask, HTML, CSS, and JavaScript used to build this application.
-            </p>
+            <p>Python, Flask, HTML, CSS, and JavaScript used to build this application.</p>
             <a href="/skills">View skills →</a>
         </div>
 
         <div class="card">
             <h3>Projects</h3>
-            <p>
-                Dynamic content rendered using Flask data structures and templates.
-            </p>
+            <p>Dynamic content rendered using Flask data structures and templates.</p>
             <a href="/projects">See projects →</a>
         </div>
 
-           <!-- CONTACT CARD MUST BE HERE -->
-    <div class="card">
-        <h3>Contact</h3>
-        <p>
-            Get in touch to leave feedback or ask questions about the projects.
-        </p>
-        <a href="/contact">Contact me →</a>
+        <div class="card">
+            <h3>Contact</h3>
+            <p>Get in touch to leave feedback or ask questions about the projects.</p>
+            <a href="/contact">Contact me →</a>
+        </div>
     </div>
 
-    </main>
+</main>
+
  <footer class="site-footer">
     <div class="container footer-content">
         <p>

@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request,flash
 
 app = Flask(__name__)
-
 projects = [
     {
         "title": "Afrovibes – Southern African Music Showcase",
@@ -12,8 +11,8 @@ projects = [
             "The site focuses on structure, content presentation, and cultural storytelling using HTML."
         ),
         "image": "ladysmith.jpg"
-    },
-    {
+        
+    },    {
         "title": "Tour Zimbabwe – Interactive Travel Website",
         "description": (
             "A web project built using HTML and JavaScript to promote tourism in Zimbabwe. "
@@ -24,6 +23,7 @@ projects = [
         "image": "lion.jpg"
     }
 ]
+
 
 skills = [
     "Python",
