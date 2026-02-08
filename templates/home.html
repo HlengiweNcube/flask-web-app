@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Flask Portfolio</title>
+
+    <!-- Main site stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
+
+    <!-- Accessibility: skip navigation for keyboard users -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Navigation -->
+
+    <!-- Site Navigation -->
     <header class="navbar">
         <div class="container nav-flex">
             <h1 class="logo">FlaskApp</h1>
-            <nav>
-    <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
-    <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About</a>
-    <a href="/skills" class="{% if request.path == '/skills' %}active{% endif %}">Skills</a>
-    <a href="/projects" class="{% if request.path == '/projects' %}active{% endif %}">Projects</a>
-    <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a>
-</nav>
 
+            <nav aria-label="Main navigation">
+                <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+                <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About</a>
+                <a href="/skills" class="{% if request.path == '/skills' %}active{% endif %}">Skills</a>
+                <a href="/projects" class="{% if request.path == '/projects' %}active{% endif %}">Projects</a>
+                <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero section introducing the portfolio -->
     <section class="hero">
         <div class="container">
             <h2>My Project Portfolio for the Full Stack Software Development Course</h2>
+
             <p>
-                This website showcases the projects I have completed during this course,
-                highlighting my learning and progress across the HTML, JavaScript, and Python modules,
+                This website showcases the projects I have completed during the course,
+                highlighting my learning and progress across HTML, JavaScript, and Python,
                 and how these technologies are combined in full stack web development.
             </p>
 
@@ -38,45 +43,57 @@
         </div>
     </section>
 
+    <!-- Main content -->
     <main id="main-content" class="container">
 
-    <div class="grid">
-        <div class="card">
-            <h3>About</h3>
-            <p>Learn more about this project, its purpose, and the technologies used.</p>
-            <a href="/about">Read more →</a>
+        <!-- Overview cards linking to main sections -->
+        <section class="grid">
+
+            <article class="card">
+                <h3>About</h3>
+                <p>
+                    Learn more about this project, its purpose, and the technologies used.
+                </p>
+                <a href="/about">Read more →</a>
+            </article>
+
+            <article class="card">
+                <h3>Skills</h3>
+                <p>
+                    Python, Flask, HTML, CSS, and JavaScript used to build this application.
+                </p>
+                <a href="/skills">View skills →</a>
+            </article>
+
+            <article class="card">
+                <h3>Projects</h3>
+                <p>
+                    Dynamic content rendered using Flask data structures and templates.
+                </p>
+                <a href="/projects">See projects →</a>
+            </article>
+
+            <article class="card">
+                <h3>Contact</h3>
+                <p>
+                    Get in touch to leave feedback or ask questions about the projects.
+                </p>
+                <a href="/contact">Contact me →</a>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>
+                © 2026 | Full Stack Software Development Portfolio
+                <br>
+                Built with HTML, CSS, JavaScript &amp; Flask
+            </p>
         </div>
+    </footer>
 
-        <div class="card">
-            <h3>Skills</h3>
-            <p>Python, Flask, HTML, CSS, and JavaScript used to build this application.</p>
-            <a href="/skills">View skills →</a>
-        </div>
-
-        <div class="card">
-            <h3>Projects</h3>
-            <p>Dynamic content rendered using Flask data structures and templates.</p>
-            <a href="/projects">See projects →</a>
-        </div>
-
-        <div class="card">
-            <h3>Contact</h3>
-            <p>Get in touch to leave feedback or ask questions about the projects.</p>
-            <a href="/contact">Contact me →</a>
-        </div>
-    </div>
-
-</main>
-
- <footer class="site-footer">
-    <div class="container footer-content">
-        <p>
-            © 2026 | Full Stack Software Development Portfolio
-            <br>
-            Built with HTML, CSS, JavaScript &amp;  Flask
-        </p>
-    </div>
-</footer>
 </body>
-
 </html>
