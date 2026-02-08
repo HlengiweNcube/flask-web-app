@@ -241,14 +241,18 @@ body {
     border-top: 5px solid #2575fc;
 }
 
-.skill-card img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 10px;
+.skills-image {
+    text-align: center;
+    margin-top: 40px;
 }
+
+.skills-image img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
 
 
 /* =========================
