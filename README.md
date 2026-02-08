@@ -181,3 +181,16 @@ The project was checked for standards compliance:
 - CSS validated using the W3C CSS Validator
 
 Any warnings or errors encountered were reviewed and resolved where possible to ensure clean, standards-compliant code.
+
+## References & Credits
+
+Learning resources used during development include:
+
+- Flask official documentation
+- MDN Web Docs (HTML, CSS, JavaScript)
+- W3Schools (syntax reference)
+
+Images used in the project were sourced from free-to-use platforms:
+
+- Unsplash
+- Pexels

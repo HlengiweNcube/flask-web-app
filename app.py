@@ -10,20 +10,21 @@ projects = [
             "and Asungura Boys, and traditional instruments including the mbira and African drums. "
             "The site focuses on structure, content presentation, and cultural storytelling using HTML."
         ),
-        "image": "ladysmith.jpg"
+        "image": "ladysmith.jpg",
+        "live_url": "https://hlengiwencube.github.io/afrovibes/"
         
     },    {
         "title": "Tour Zimbabwe – Interactive Travel Website",
         "description": (
             "A web project built using HTML and JavaScript to promote tourism in Zimbabwe. "
             "The website features popular destinations such as Victoria Falls, the Zambezi Valley, "
-            "Matobo Hills, and other attractions. JavaScript was used to add interactivity and enhance "
+            "Matobo Hills,Bulawayo City Hall, the vibrant capital city Harare and other attractions. JavaScript was used to add interactivity and enhance "
             "the user experience."
         ),
-        "image": "lion.jpg"
+        "image": "lion.jpg",
+        "live_url": "https://hlengiwencube.github.io/tour_zimbabwe/"
     }
 ]
-
 
 skills = [
     "Python",
