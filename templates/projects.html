@@ -23,6 +23,7 @@
         </div>
     </header>
 
+
     <!-- PROJECTS HERO (PAGE START) -->
     <section class="projects-hero">
         <div class="container">
@@ -35,19 +36,27 @@
     </section>
 
     <!-- PAGE CONTENT -->
-    <main class="container projects-page">
-        <div class="projects-grid">
-            {% for project in projects %}
-            <div class="project-card">
-                <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}">
-                <h3>{{ project.title }}</h3>
-                <p>{{ project.description }}</p>
-                <div class="project-links">
-                    <a href="{{ project.live_url }}" target="_blank" rel="noopener">View Live Project</a>
-                </div>
-            </div>
-            {% endfor %}
+    <main id="main-content" class="container projects-page" tabindex="-1">
+       <div class="projects-grid">
+    {% for project in projects %}
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/' + project.image) }}"
+             alt="{{ project.title }}">
+
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+
+        <div class="project-links">
+            <a href="{{ project.live_url }}"
+               target="_blank"
+               rel="noopener">
+                View Live Project →
+            </a>
         </div>
+    </div>
+    {% endfor %}
+</div>
+
 
     </main>
     <footer class="site-footer">
