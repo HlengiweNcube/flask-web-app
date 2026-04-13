@@ -17,7 +17,7 @@ The web application functions as a **personal portfolio website** that showcases
 
 ---
 
-## 🎯 Project Objectives
+## 🎯 Project  Objectives
 - Build a dynamic web application using Flask
 - Implement multiple routes and HTML templates
 - Apply modern CSS styling for a professional appearance
