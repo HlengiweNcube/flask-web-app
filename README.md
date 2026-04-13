@@ -13,7 +13,7 @@
 This project is a web application built using **Python and Flask** as part of a course assignment.  
 The purpose of the application is to demonstrate the use of Flask for backend development while integrating **HTML, CSS, and JavaScript** to create a modern, interactive, and visually appealing website.
 
-The web application functions as a **personal portfolio website** that showcases projects, skills, background information, and includes a contact form. The application is deployed online using **Render.com**.
+The web application functions as a **personal portfolio website** that showcases projects, skills, background information, and includes a contact form. The application is deployed online using  **Render.com**.
 
 ---
 
