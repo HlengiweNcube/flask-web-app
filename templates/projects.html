@@ -9,39 +9,41 @@
 
 <body>
 
+    <!-- NAVIGATION -->
     <header class="navbar">
         <div class="container nav-flex">
             <h1 class="logo">My Portfolio</h1>
+
             <nav aria-label="Main navigation">
-                <a href="{{ url_for('home') }}" class="{% if request.path == url_for('home') %}active{% endif %}">
+                <a href="{{ url_for('home') }}"
+                   class="{% if request.path == url_for('home') %}active{% endif %}">
                     Home
                 </a>
 
                 <a href="{{ url_for('about_page') }}"
-                    class="{% if request.path == url_for('about_page') %}active{% endif %}">
+                   class="{% if request.path == url_for('about_page') %}active{% endif %}">
                     About
                 </a>
 
                 <a href="{{ url_for('skills_page') }}"
-                    class="{% if request.path == url_for('skills_page') %}active{% endif %}">
+                   class="{% if request.path == url_for('skills_page') %}active{% endif %}">
                     Skills
                 </a>
 
                 <a href="{{ url_for('projects_page') }}"
-                    class="{% if request.path == url_for('projects_page') %}active{% endif %}">
+                   class="{% if request.path == url_for('projects_page') %}active{% endif %}">
                     Projects
                 </a>
 
-                <a href="{{ url_for('contact') }}" class="{% if request.path == url_for('contact') %}active{% endif %}">
+                <a href="{{ url_for('contact') }}"
+                   class="{% if request.path == url_for('contact') %}active{% endif %}">
                     Contact
                 </a>
             </nav>
-
         </div>
     </header>
 
-
-    <!-- PROJECTS HERO (PAGE START) -->
+    <!-- HERO -->
     <section class="projects-hero">
         <div class="container">
             <h2>Course Projects</h2>
@@ -52,27 +54,54 @@
         </div>
     </section>
 
-    <!-- PAGE CONTENT -->
+    <!-- MAIN CONTENT -->
     <main id="main-content" class="container projects-page" tabindex="-1">
-        <div class="projects-grid">
-            {% for project in projects %}
-            <div class="project-card">
-                <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}">
 
-                <h3>{{ project.title }}</h3>
-                <p>{{ project.description }}</p>
+    <!-- FLASH MESSAGES -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flash-container">
+        {% for msg in messages %}
+        <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
 
-                <div class="project-links">
-                    <a href="{{ project.live_url }}" target="_blank" rel="noopener">
-                        View Live Project →
-                    </a>
-                </div>
+    <div class="projects-grid">
+        {% for project in projects %}
+        <div class="project-card">
+
+            <img src="{{ url_for('static', filename='images/' + project.image) }}"
+                 alt="{{ project.title }}">
+
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+
+            <div class="project-links">
+
+                <!-- VIEW -->
+                <a href="{{ project.live_url }}" target="_blank" rel="noopener">
+                    View →
+                </a>
+
+                <!-- EDIT (UPDATE) -->
+                <a href="{{ url_for('edit_project', project_id=project.id) }}">
+                    Edit
+                </a>
+
+                <!-- DELETE -->
+                <a href="{{ url_for('delete_project', project_id=project.id) }}">
+                    Delete
+                </a>
+
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+    </div>
 
-
-    </main>
+</main>
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-content">
             <p>

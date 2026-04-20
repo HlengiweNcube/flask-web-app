@@ -351,3 +351,14 @@ textarea:focus {
 .project-links a:hover {
     background-color: #e68900;
 }
+.flash-container {
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.project-links a {
+    margin-right: 10px;
+}
