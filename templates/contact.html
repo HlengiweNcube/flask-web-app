@@ -8,91 +8,99 @@
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <header class="navbar">
         <div class="container nav-flex">
             <h1 class="logo">My Portfolio</h1>
+
             <nav aria-label="Main navigation">
-                <a href="{{ url_for('home') }}" class="{% if request.path == url_for('home') %}active{% endif %}">
-                    Home
-                </a>
+                <a href="{{ url_for('home') }}"
+                   class="{% if request.path == url_for('home') %}active{% endif %}">Home</a>
 
                 <a href="{{ url_for('about_page') }}"
-                    class="{% if request.path == url_for('about_page') %}active{% endif %}">
-                    About
-                </a>
+                   class="{% if request.path == url_for('about_page') %}active{% endif %}">About</a>
 
                 <a href="{{ url_for('skills_page') }}"
-                    class="{% if request.path == url_for('skills_page') %}active{% endif %}">
-                    Skills
-                </a>
+                   class="{% if request.path == url_for('skills_page') %}active{% endif %}">Skills</a>
 
                 <a href="{{ url_for('projects_page') }}"
-                    class="{% if request.path == url_for('projects_page') %}active{% endif %}">
-                    Projects
-                </a>
+                   class="{% if request.path == url_for('projects_page') %}active{% endif %}">Projects</a>
 
-                <a href="{{ url_for('contact') }}" class="{% if request.path == url_for('contact') %}active{% endif %}">
-                    Contact
-                </a>
+                <a href="{{ url_for('contact') }}"
+                   class="{% if request.path == url_for('contact') %}active{% endif %}">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Contact Hero -->
+    <!-- HERO -->
     <section class="contact-hero">
         <div class="container">
-            <img src="{{ url_for('static', filename='images/contact.jpg') }}"
-                alt="Illustration representing contact and communication" class="contact-image">
-            <p>
-                Use the form below to send a message or get in touch regarding my course projects.
-            </p>
+            <p>Send a message or get in touch about my projects.</p>
         </div>
     </section>
 
-    <!-- Contact Form -->
-    <main id="main-content" class="container" tabindex="-1">
+    <!-- MAIN -->
+    <main class="container">
 
+        <!-- FLASH MESSAGES -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="flash-container">
+            {% for msg in messages %}
+            <li>{{ msg }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
 
+        <!-- FORM -->
         <div class="contact-card">
             <form method="POST">
 
                 <div class="form-group">
-                    <label for="name"> Full Name</label>
-                    <input type="text" name="name" id="name" required placeholder="Enter your Firstname">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="surname">Surname</label>
-                    <input type="text" name="surname" id="surname" required placeholder="Enter your Surname">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" required pattern="[0-9]+">
                 </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required pattern="[0-9]+"
-                        placeholder="Digits only (e.g. 0712345678)">
-                </div>
+
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea name="message" id="message" rows="5" required></textarea>
                 </div>
+
                 <button type="submit" class="btn">Send Message</button>
+
             </form>
         </div>
-    </main>
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <p>
-                © 2026 | Full Stack Software Development Portfolio
-                <br>
-                Built with HTML, CSS, JavaScript &amp; Flask
-            </p>
-        </div>
-    </footer>
-</body>
 
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>© 2026 Flask Portfolio</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+            const name = document.getElementById("name").value;
+
+            if (name.length < 2) {
+                alert("Name must be at least 2 characters long");
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body>
 </html>
