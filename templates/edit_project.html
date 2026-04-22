@@ -11,23 +11,33 @@
     <!-- FORM CARD -->
     <div class="contact-card">
 
-        <form method="POST">
+ <form method="POST">
 
-            <!-- TITLE -->
-            <div class="form-group">
-                <label for="title">Project Title</label>
-                <input 
-                    type="text" 
-                    id="title" 
-                    name="title" 
-                    value="{{ project.title }}" 
-                    required>
-            </div>
+    <!-- TITLE -->
+    <div class="form-group">
+        <label for="title">Project Title</label>
+        <input 
+            type="text" 
+            id="title" 
+            name="title" 
+            value="{{ project.title }}" 
+            required>
+    </div>
 
-            <!-- SUBMIT BUTTON -->
-            <button type="submit" class="btn">Update Project</button>
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea 
+            name="description" 
+            id="description" 
+            rows="4" 
+            required>{{ project.description }}</textarea>
+    </div>
 
-        </form>
+    <!-- SUBMIT -->
+    <button type="submit" class="btn">Update Project</button>
+
+</form>
 
     </div>
 
