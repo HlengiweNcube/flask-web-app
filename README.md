@@ -76,7 +76,7 @@ The application functions as a personal portfolio website that showcases:
 
 ---
 
-## 🔄 CRUD Functionality
+## 🔄  CRUD Functionality
 
 | Operation | Description             |
 | --------- | ----------------------- |
