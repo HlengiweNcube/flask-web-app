@@ -1,119 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Flask Portfolio</title>
+{% block title %}Home{% endblock %}
 
-    <!-- Main site stylesheet -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% block content %}
 
-<body>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <h2>My Project Portfolio for the Full Stack Software Development Course</h2>
 
-    <!-- Accessibility: skip navigation for keyboard users -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+        <p>
+            This website showcases the projects I have completed during the course,
+            highlighting my learning and progress across HTML, JavaScript, and Python,
+            and how these technologies are combined in full stack web development.
+        </p>
 
-    <!-- Site Navigation -->
-    <header class="navbar">
-        <div class="container nav-flex">
-            <h1 class="logo">FlaskApp</h1>
+        <a href="{{ url_for('projects_page') }}" class="btn">View Projects</a>
+    </div>
+</section>
 
-            <nav aria-label="Main navigation">
-                <a href="{{ url_for('home') }}" class="{% if request.path == url_for('home') %}active{% endif %}">
-                    Home
-                </a>
+<!-- MAIN CONTENT GRID -->
+<section class="grid">
 
-                <a href="{{ url_for('about_page') }}"
-                    class="{% if request.path == url_for('about_page') %}active{% endif %}">
-                    About
-                </a>
+    <article class="card">
+        <h3>About</h3>
+        <p>
+            Learn more about this project, its purpose, and the technologies used.
+        </p>
+        <a href="{{ url_for('about_page') }}">Read more →</a>
+    </article>
 
-                <a href="{{ url_for('skills_page') }}"
-                    class="{% if request.path == url_for('skills_page') %}active{% endif %}">
-                    Skills
-                </a>
+    <article class="card">
+        <h3>Skills</h3>
+        <p>
+            Python, Flask, HTML, CSS, and JavaScript used to build this application.
+        </p>
+        <a href="{{ url_for('skills_page') }}">View skills →</a>
+    </article>
 
-                <a href="{{ url_for('projects_page') }}"
-                    class="{% if request.path == url_for('projects_page') %}active{% endif %}">
-                    Projects
-                </a>
+    <article class="card">
+        <h3>Projects</h3>
+        <p>
+            Dynamic content rendered using Flask data structures and templates.
+        </p>
+        <a href="{{ url_for('projects_page') }}">See projects →</a>
+    </article>
 
-                <a href="{{ url_for('contact') }}" class="{% if request.path == url_for('contact') %}active{% endif %}">
-                    Contact
-                </a>
-            </nav>
-        </div>
-    </header>
-     <p>Deployment test April</p>
-    <!-- Hero section introducing the portfolio -->
-    <section class="hero">
-        <div class="container">
-            <h2>My Project Portfolio for the Full Stack Software Development Course</h2>
+    <article class="card">
+        <h3>Contact</h3>
+        <p>
+            Get in touch to leave feedback or ask questions about the projects.
+        </p>
+        <a href="{{ url_for('contact') }}">Contact me →</a>
+    </article>
 
-            <p>
-                This website showcases the projects I have completed during the course,
-                highlighting my learning and progress across HTML, JavaScript, and Python,
-                and how these technologies are combined in full stack web development.
-            </p>
+</section>
 
-            <a href="/projects" class="btn">View Projects</a>
-        </div>
-    </section>
-
-    <!-- Main content -->
-    <main id="main-content" class="container" tabindex="-1">
-
-
-        <!-- Overview cards linking to main sections -->
-        <section class="grid">
-
-            <article class="card">
-                <h3>About</h3>
-                <p>
-                    Learn more about this project, its purpose, and the technologies used.
-                </p>
-                <a href="/about">Read more →</a>
-            </article>
-
-            <article class="card">
-                <h3>Skills</h3>
-                <p>
-                    Python, Flask, HTML, CSS, and JavaScript used to build this application.
-                </p>
-                <a href="/skills">View skills →</a>
-            </article>
-
-            <article class="card">
-                <h3>Projects</h3>
-                <p>
-                    Dynamic content rendered using Flask data structures and templates.
-                </p>
-                <a href="/projects">See projects →</a>
-            </article>
-
-            <article class="card">
-                <h3>Contact</h3>
-                <p>
-                    Get in touch to leave feedback or ask questions about the projects.
-                </p>
-                <a href="/contact">Contact me →</a>
-            </article>
-
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <p>
-                © 2026 | Full Stack Software Development Portfolio
-                <br>
-                Built with HTML, CSS, JavaScript &amp; Flask
-            </p>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+{% endblock %}
