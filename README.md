@@ -12,7 +12,7 @@ This application is deployed using Render and connected to the GitHub repository
 Any changes pushed to the `main` branch automatically trigger a new deployment (continuous deployment).
 
 ---
-🔗 Repository and Deployment Connection
+🔗 Repository and Deployment  Connection
 
 This project is hosted on GitHub and deployed using Render.
 The Render web service (flask-web-app-rrvy) is directly connected to the GitHub repository:
