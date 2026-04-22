@@ -1,22 +1,16 @@
-projects = [
+[
     {
         "id": 0,
-        "title": "Afrovibes – Southern African Music Showcase",
+        "title": "Afrovibes \u2013 Southern African Music Showcase",
         "description": "Music and culture showcase project.",
         "image": "ladysmith.jpg",
         "live_url": "https://hlengiwencube.github.io/afrovibes/"
     },
     {
         "id": 1,
-        "title": "Tour Zimbabwe – Interactive Travel Website",
+        "title": "Tour Zimbabwe \u2013 Interactive Travel Website",
         "description": "Tourism web app with JavaScript interactivity.",
         "image": "lion.jpg",
         "live_url": "https://hlengiwencube.github.io/tour_zimbabwe/"
     }
-]
-
-skills = [
-    {"name": "HTML", "desc": "Semantic structure and layout"},
-    {"name": "JavaScript", "desc": "DOM manipulation and events"},
-    {"name": "Flask", "desc": "Routing and backend logic"}
 ]
