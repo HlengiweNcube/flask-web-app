@@ -3,61 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <!-- Dynamic Page Title -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Flask App{% endblock %}</title>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-<!-- Accessibility -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- NAVIGATION -->
-<header class="navbar">
-    <div class="container nav-flex">
-        <h1 class="logo">My Portfolio</h1>
+    <header class="navbar">
+        <div class="container nav-flex">
+            <h1 class="logo">My Portfolio</h1>
 
-        <nav aria-label="Main navigation">
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('about_page') }}">About</a>
-            <a href="{{ url_for('skills_page') }}">Skills</a>
-            <a href="{{ url_for('projects_page') }}">Projects</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
-        </nav>
-    </div>
-</header>
+            <nav aria-label="Main navigation">
+                <a href="{{ url_for('home') }}"
+                   class="{% if request.endpoint == 'home' %}active{% endif %}">
+                    Home
+                </a>
 
-<!-- FLASH MESSAGES -->
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul class="flash-container">
-    {% for msg in messages %}
-    <li>{{ msg }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
+                <a href="{{ url_for('about_page') }}"
+                   class="{% if request.endpoint == 'about_page' %}active{% endif %}">
+                    About
+                </a>
 
-<!-- MAIN CONTENT -->
-<main id="main-content" class="container" tabindex="-1">
-    {% block content %}{% endblock %}
-</main>
+                <a href="{{ url_for('skills_page') }}"
+                   class="{% if request.endpoint == 'skills_page' %}active{% endif %}">
+                    Skills
+                </a>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-    <p>
-        © 2026 | Full Stack Software Development Portfolio
-        <br>
-        Built with HTML, CSS, JavaScript &amp; Flask
-    </p>
-</footer>
+                <a href="{{ url_for('projects_page') }}"
+                   class="{% if request.endpoint in ['projects_page', 'project_detail', 'add_project', 'edit_project'] %}active{% endif %}">
+                    Projects
+                </a>
 
-<!-- JAVASCRIPT -->
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+                <a href="{{ url_for('contact') }}"
+                   class="{% if request.endpoint == 'contact' %}active{% endif %}">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-container">
+                {% for msg in messages %}
+                    <li>{{ msg }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <main id="main-content" class="container" tabindex="-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            © 2026 | Full Stack Software Development Portfolio
+            <br>
+            Built with HTML, CSS, JavaScript &amp; Flask
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}{% endblock %}
 
 </body>
 </html>
