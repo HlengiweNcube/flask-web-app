@@ -79,6 +79,7 @@ def edit_project(project_id):
 
     if request.method == "POST":
         project["title"] = request.form.get("title")
+        project["description"] = request.form.get("description")
         flash("Project updated!")
         return redirect(url_for("projects_page"))
 
@@ -92,6 +93,8 @@ def delete_project(project_id):
 
     flash("Project deleted!")
     return redirect(url_for("projects_page"))
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

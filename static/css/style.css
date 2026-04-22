@@ -362,3 +362,6 @@ textarea:focus {
 .project-links a {
     margin-right: 10px;
 }
+.back-link {
+    margin-top: 20px;
+}
