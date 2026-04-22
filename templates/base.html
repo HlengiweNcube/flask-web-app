@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Dynamic Page Title -->
+    <title>{% block title %}Flask App{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- Accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+    <div class="container nav-flex">
+        <h1 class="logo">My Portfolio</h1>
+
+        <nav aria-label="Main navigation">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about_page') }}">About</a>
+            <a href="{{ url_for('skills_page') }}">Skills</a>
+            <a href="{{ url_for('projects_page') }}">Projects</a>
+            <a href="{{ url_for('edit_project') }}">Edit Project</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- FLASH MESSAGES -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class="flash-container">
+    {% for msg in messages %}
+    <li>{{ msg }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<!-- MAIN CONTENT -->
+<main id="main-content" class="container" tabindex="-1">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <p>
+        © 2026 | Full Stack Software Development Portfolio
+        <br>
+        Built with HTML, CSS, JavaScript &amp; Flask
+    </p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
