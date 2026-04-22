@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
+from data import projects, skills
+from utils import get_project, create_project
 
 app = Flask(__name__)
 app.secret_key = "secret123"  # REQUIRED for flash messages
@@ -120,6 +122,8 @@ def add_project():
         return redirect(url_for("projects_page"))
 
     return render_template("add_project.html")
+
+create_project(projects, title, description, image, live_url)
 
 skills = [
     {"name": "HTML", "desc": "Semantic structure and layout"},
