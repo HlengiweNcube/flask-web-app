@@ -18,10 +18,8 @@
 
         {% for skill in skills %}
         <article class="skill-card">
-            <h3>{{ skill }}</h3>
-            <p>
-                Experience gained in {{ skill }} through coursework and projects.
-            </p>
+            <h3>{{ skill.name }}</h3>
+            <p>{{ skill.desc }}</p>
         </article>
         {% endfor %}
 
