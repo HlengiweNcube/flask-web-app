@@ -1,56 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Project</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% block title %}Edit Project{% endblock %}
 
-<body>
+{% block content %}
 
-    <!-- NAVIGATION -->
-    <header class="navbar">
-        <div class="container nav-flex">
-            <h1 class="logo">My Portfolio</h1>
+<section class="container">
 
-            <nav>
-                <a href="{{ url_for('home') }}">Home</a>
-                <a href="{{ url_for('projects_page') }}">Projects</a>
-            </nav>
-        </div>
-    </header>
+    <h2>Edit Project</h2>
 
-    <!-- MAIN -->
-    <main class="container">
+    <!-- FORM CARD -->
+    <div class="contact-card">
 
-        <h2>Edit Project</h2>
-
-        <!-- FLASH MESSAGES -->
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul class="flash-container">
-            {% for msg in messages %}
-            <li>{{ msg }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-
-        <!-- FORM -->
         <form method="POST">
 
+            <!-- TITLE -->
             <div class="form-group">
-                <label>Title</label>
-                <input type="text" name="title" value="{{ project.title }}" required>
+                <label for="title">Project Title</label>
+                <input 
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    value="{{ project.title }}" 
+                    required>
             </div>
 
+            <!-- SUBMIT BUTTON -->
             <button type="submit" class="btn">Update Project</button>
 
         </form>
 
-    </main>
+    </div>
 
-</body>
+    <!-- BACK LINK -->
+    <div class="back-link">
+        <a href="{{ url_for('projects_page') }}" class="btn">← Back to Projects</a>
+    </div>
 
-</html>
+</section>
+
+{% endblock %}
