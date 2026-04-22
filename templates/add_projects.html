@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Add Project{% endblock %}
+
+{% block content %}
+
+<section class="container">
+
+    <h2>Add New Project</h2>
+
+    <div class="contact-card">
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label>Project Title</label>
+                <input type="text" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Image filename (optional)</label>
+                <input type="text" name="image" placeholder="example.jpg">
+            </div>
+
+            <div class="form-group">
+                <label>Live URL (optional)</label>
+                <input type="url" name="live_url">
+            </div>
+
+            <button type="submit" class="btn">Add Project</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

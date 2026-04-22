@@ -94,7 +94,38 @@ def delete_project(project_id):
     flash("Project deleted!")
     return redirect(url_for("projects_page"))
 
+@app.route("/add_project", methods=["GET", "POST"])
+def add_project():
+    if request.method == "POST":
+        title = request.form.get("title")
+        description = request.form.get("description")
+        image = request.form.get("image")
+        live_url = request.form.get("live_url")
 
+        if not title or not description:
+            flash("Title and description are required.")
+            return redirect(url_for("add_project"))
+
+        new_project = {
+            "id": len(projects),
+            "title": title,
+            "description": description,
+            "image": image if image else "default.jpg",
+            "live_url": live_url if live_url else "#"
+        }
+
+        projects.append(new_project)
+
+        flash("Project added successfully!")
+        return redirect(url_for("projects_page"))
+
+    return render_template("add_project.html")
+
+skills = [
+    {"name": "HTML", "desc": "Semantic structure and layout"},
+    {"name": "JavaScript", "desc": "DOM manipulation and events"},
+    {"name": "Flask", "desc": "Routing and backend logic"}
+]
 
 if __name__ == "__main__":
     app.run(debug=True)
