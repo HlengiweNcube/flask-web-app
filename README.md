@@ -37,32 +37,32 @@ The screenshots below demonstrate how the application was configured and deploye
 ---
 
 ### ⚙️ Build and Start Commands
-(static/images/screenshots/render_setup.png)
-(static/images/screenshots/render_setup1.png)
-(static/images/screenshots/render_setup2.png)
-(static/images/screenshots/render_setup3.png)
-(static/images/screenshots/render_setup4.png)
-(static/images/screenshots/render_setup5.png)
+![Setup](static/images/screenshots/render_setup.png)
+![Setup](static/images/screenshots/render_setup1.png)
+![Setup](static/images/screenshots/render_setup2.png)
+![Setup](static/images/screenshots/render_setup3.png)
+![Setup](static/images/screenshots/render_setup4.png)
+![Setup](static/images/screenshots/render_setup5.png)
 
 
 * Build command: `pip install -r requirements.txt`
 * Start command: `gunicorn app:app`
-(static/images/screenshots/build.png) 
+![Setup](static/images/screenshots/build.png) 
 
 ---
 
 ### 🔗 GitHub Integration
 
 
-![GitHub Connection](static/images/screenshots/render-github.png)
+![GitHub Connection]![Setup](static/images/screenshots/render-github.png)
 
-(static/images/screenshots/render_in_github.png)   
+![Setup](static/images/screenshots/render_in_github.png)   
 
 ### 📊 Deployment Logs
 
 ![Deployment Logs](static/images/screenshots/render-logs.png)
 
-(static/images/screenshots/render_deploy.png)   
+![Setup](static/images/screenshots/render_deploy.png)   
 
 -----
 
@@ -119,13 +119,12 @@ The application functions as a personal portfolio website that showcases:
 
 ## 🔄 CRUD Functionality
 
-| Operation | Description             |
-| --------- | ----------------------- |
-| Create    | Contact form submission |
-| Read      | Display projects        |
-| Update    | Edit project            |
-| Delete    | Remove project          |
-
+| Operation | Description |
+|----------|------------|
+| Create   | Add new project (`/add_project`) |
+| Read     | View projects (`/projects`) |
+| Update   | Edit project (`/edit_project/<id>`) |
+| Delete   | Delete project (`/delete_project/<id>`) |
 ---
 
 ## 📬 Contact Form Features
@@ -159,27 +158,68 @@ The application functions as a personal portfolio website that showcases:
 ---
 
 ## 📁 Project Structure
+## 📁 Project Structure
 
 flask-web-app/
 │
 ├── app.py
+├── utils.py
 ├── requirements.txt
 ├── README.md
 │
 ├── templates/
+│   ├── base.html
 │   ├── home.html
 │   ├── about.html
 │   ├── skills.html
 │   ├── projects.html
 │   ├── contact.html
-│   └── edit_project.html
+│   ├── edit_project.html
+│   └── add_project.html
 │
 ├── static/
 │   ├── css/style.css
 │   ├── js/script.js
 │   └── images/
-
 ---
+
+## 🧩 Code Structure and Modules
+
+The application is structured using multiple Python modules to improve organisation and maintainability:
+
+* `app.py`
+  Handles Flask routing and application configuration.
+
+* `utils.py`
+  Contains reusable helper functions such as:
+
+  * `get_project()` → retrieves a project by ID
+  * `create_project()` → adds a new project
+
+* `data.py` (if used)
+  Stores application data such as project and skills lists.
+
+This separation of concerns improves readability, reusability, and demonstrates more advanced Python structure.
+
+## ✅ Validation
+
+Validation is implemented on both client-side and server-side:
+
+### Client-side (JavaScript)
+
+* Form input validation using event listeners
+* Prevents submission if invalid data is entered
+
+### Server-side (Flask)
+
+* Checks for empty fields
+* Ensures phone number contains only digits
+* Uses `flash()` messages to provide feedback
+* Redirects after validation using `redirect()`
+
+This ensures data integrity and improves user experience.
+
+
 
 ## ▶️ Running the Project Locally
 

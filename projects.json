@@ -12,19 +12,5 @@
         "description": "Tourism web app with JavaScript interactivity.",
         "image": "lion.jpg",
         "live_url": "https://hlengiwencube.github.io/tour_zimbabwe/"
-    },
-    {
-        "id": 2,
-        "title": "test",
-        "description": "testtest",
-        "image": "trst",
-        "live_url": "#"
-    },
-    {
-        "id": 3,
-        "title": "test",
-        "description": "tetss",
-        "image": "tets",
-        "live_url": "#"
     }
 ]
