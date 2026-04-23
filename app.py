@@ -8,11 +8,13 @@ app.secret_key = "secret123"
 
 
 def get_project(project_id: int):
+    """Retrieve a project by its ID."""
     projects = load_projects()
     return next((p for p in projects if p["id"] == project_id), None)
 
 
 def validate_contact(name, email, phone, message):
+    """Validate contact form input and return an error message if invalid."""
     if not name or not email or not phone or not message:
         return "All fields are required."
     if not re.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$", email):
@@ -77,7 +79,9 @@ def contact():
 @app.route("/edit_project/<int:project_id>", methods=["GET", "POST"])
 def edit_project(project_id):
     projects = load_projects()
-    project = next((p for p in projects if p["id"] == project_id), None)
+
+    # ✅ small improvement: reuse function
+    project = get_project(project_id)
 
     if project is None:
         flash("Project not found.")
