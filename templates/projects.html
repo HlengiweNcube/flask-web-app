@@ -1,79 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Course Projects</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% block title %}Course Projects{% endblock %}
 
-<body>
+{% block content %}
+<section class="projects-hero">
+    <div class="container">
+        <h2>Course Projects</h2>
+        <p>
+            The projects below were completed as part of the Full Stack Software Development course.
+            They demonstrate my progression from HTML, to JavaScript, and now Flask.
+        </p>
+    </div>
+</section>
 
-    <!-- NAVIGATION -->
-    <header class="navbar">
-        <div class="container nav-flex">
-            <h1 class="logo">My Portfolio</h1>
-
-            <nav aria-label="Main navigation">
-                <a href="{{ url_for('home') }}"
-                   class="{% if request.path == url_for('home') %}active{% endif %}">
-                    Home
-                </a>
-
-                <a href="{{ url_for('about_page') }}"
-                   class="{% if request.path == url_for('about_page') %}active{% endif %}">
-                    About
-                </a>
-
-                <a href="{{ url_for('skills_page') }}"
-                   class="{% if request.path == url_for('skills_page') %}active{% endif %}">
-                    Skills
-                </a>
-
-                <a href="{{ url_for('projects_page') }}"
-                   class="{% if request.path == url_for('projects_page') %}active{% endif %}">
-                    Projects
-                </a>
-
-                <a href="{{ url_for('contact') }}"
-                   class="{% if request.path == url_for('contact') %}active{% endif %}">
-                    Contact
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="projects-hero">
-        <div class="container">
-            <h2>Course Projects</h2>
-            <p>
-                The projects below were completed as part of the Full Stack Software Development course.
-                They demonstrate my progression from HTML, to JavaScript, and now Flask.
-            </p>
-        </div>
-    </section>
-
-    <!-- MAIN CONTENT -->
-    <main id="main-content" class="container projects-page" tabindex="-1">
-
-    <!-- FLASH MESSAGES -->
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul class="flash-container">
-        {% for msg in messages %}
-        <li>{{ msg }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-
+<section class="container projects-page" id="main-content" tabindex="-1">
     <a href="{{ url_for('add_project') }}" class="btn">+ Add Project</a>
 
+    {% if projects %}
     <div class="projects-grid">
         {% for project in projects %}
         <div class="project-card">
-
             <img src="{{ url_for('static', filename='images/' + project.image) }}"
                  alt="{{ project.title }}">
 
@@ -81,39 +27,20 @@
             <p>{{ project.description }}</p>
 
             <div class="project-links">
+                {% if not project.live_url or project.live_url == "#" %}
+                    <a href="{{ url_for('project_detail', project_id=project.id) }}">Future Projects</a>
+                {% else %}
+                    <a href="{{ project.live_url }}" target="_blank" rel="noopener">View →</a>
+                {% endif %}
 
-                <!-- VIEW -->
-                <a href="{{ project.live_url }}" target="_blank" rel="noopener">
-                    View →
-                </a>
-
-                <!-- EDIT (UPDATE) -->
-                <a href="{{ url_for('edit_project', project_id=project.id) }}">
-                    Edit
-                </a>
-
-                <!-- DELETE -->
-                <a href="{{ url_for('delete_project', project_id=project.id) }}">
-                    Delete
-                </a>
-
+                <a href="{{ url_for('edit_project', project_id=project.id) }}">Edit</a>
+                <a href="{{ url_for('delete_project', project_id=project.id) }}">Delete</a>
             </div>
         </div>
         {% endfor %}
     </div>
-
-</main>
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <p>
-                © 2026 | Full Stack Software Development Portfolio
-                <br>
-                Built with HTML, CSS, JavaScript &amp; Flask
-            </p>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+    {% else %}
+    <p>No projects available yet.</p>
+    {% endif %}
+</section>
+{% endblock %}
